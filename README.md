@@ -1,4 +1,26 @@
 # GPR_FVD_Prediction_models
-Gaussian Process Regression models to predict the seismic response of structural systems equipped with fluid viscous dampers.
+# Parametric study and prediction models for the seismic response of steel moment-resisting frames equipped with fluid viscous dampers.
 
-Two different sets of prediction models were created by using the median seismic response of the structural systems equipped with FVDs normalized with respect to the median seismic response of the control structural systems without FVDs, reducing thus the influence of the structural systems in the prediction models. The predicted response values of the systems equipped with FVDs are obtained by multiplying the computed normalized value from the prediction models by the corresponding response value of the system without FVDs. The first set of prediction models was based on the results of the parametric study on the seismic response of SDoF systems equipped with FVDs (Chapter 3). This set is composed of four prediction models aiming to forecast the normalized peak relative displacement, normalized peak relative velocity, normalized peak absolute acceleration, and normalized peak mass spectral absolute acceleration of SDoF systems equipped with FVDs. The input parameters of the prediction models were defined as the fundamental period of the SDoF system (T1), the Maxwell material stiffness described as a ratio between the Maxwell material stiffness and the system stiffness (Kd⁄Kmod ), the targeted supplemental damping ratio (ξ), the velocity exponent (α), and the spectral acceleration at a period of 1.0 s (Sa(T=1s)) of the input records. The second set of prediction models was based on the results of the parametric study on the seismic response of steel moment-resisting frames equipped with FVDs (Chapter 4). This set is composed of six prediction models aiming to forecast the normalized peak inter-story drifts, normalized peak floor absolute acceleration, and normalized peak floor spectral absolute acceleration of steel moment-resisting frames equipped with FVDs designed with both design approaches explained in Chapter 2 (i.e., ELS and UD). The input parameters of the prediction models were defined as the number of stories, the ratio of the floor’s height and the total building’s height (z⁄H), the fundamental period of the frame (T1), the Maxwell material stiffness described as a ratio between the Maxwell material stiffness and lateral floor stiffness (i.e., Kd⁄Kf ), the targeted supplemental damping ratio (ξ), the velocity exponent (α), and the spectral acceleration at a period of 1.0 s (Sa(T=1s)) of the input records.
+Gaussian Process Regression models to predict the peak inter-story drift (PISD),
+peak floor absolute acceleration (PFAA), and the peak floor spectral absolute acceleration (PFSAA),
+as a factor of such value in the equivalent steel moment-resisting frame without dampers.
+
+To use the prediction models in MATLAB, open the MATLAB script "Prediction_models.m".
+The input data to generate the prediction can be save in a txt file o be defined as a matrix in MATLAB.
+The order of the variables is important. Each row represent a data point and each column a input variable:
+total number of stories, fundamental period (s), Maxwell material stiffness as a fraction of the model stiffness (i.e., K_d⁄K_mod), supplemental damping ratio as % (e.g., 10), seismic intensity as the ground spectral acceleration at 1.0 s in g (e.g., 0.6 g), velocity exponent of FVD, and the ratio between the floor’s height and the total building’s height (i.e., z⁄H). [Ns T1 K_d⁄K_mod  Damp Sa1 Alpha z⁄H]. There are two sets of prediction models based on the design approach implemented to design the fluid viscous dampers, equivalent lateral stiffness (ELS) and uniform distribution (UD).
+
+The *.mat files contain the GPR models including the original data point used to calibrate the models as well as all the parameters obtained
+from the optimization process carried out by the Regression Learner app in MATLAB 2020b. Further information about the model calibration can be found at:
+
+https://www.mathworks.com/help/stats/train-regression-models-in-regression-learner-app.html
+
+The example steel frame use in Section 5.3.1 are used here as an example. Check the "Input.txt" file.
+
+These files are available at Github:
+https://github.com/bchalarcae/GPR_FVD_Prediction_models
+or google drive
+https://bit.ly/GPR_FVD_Prediction_models
+
+Please feel free to contact the author to get further information.
+
