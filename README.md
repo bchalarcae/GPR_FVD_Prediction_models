@@ -8,7 +8,7 @@ as a factor of such value in the equivalent SDoF system without dampers.
 To use the prediction models in MATLAB, open the MATLAB script "Prediction_models.m".
 The input data to generate the prediction can be save in a txt file o be defined as a matrix in MATLAB.
 The order of the variables is important. Each row represent a data point and each column a input variable:
-period (s), Maxwell material stiffness as a fraction of the model stiffness (i.e., Kd⁄Kmod ),
+period (s), Maxwell material stiffness as a fraction of the model stiffness (i.e., Kd⁄Kmod),
 supplemental damping ratio as % (e.g., 10),
 seismic intensity as the ground spectral acceleration at 1.0 s in g (e.g., 0.6 g),
 and the velocity exponent of FVD. [T K_d⁄K_mod  Damp Sa1 Alpha].
