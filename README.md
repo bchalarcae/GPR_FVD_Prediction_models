@@ -23,6 +23,7 @@ The example SDOF systems use in Section 5.2.1 are used here as an example. Check
 
 These files are available at Github:
 https://github.com/bchalarcae/GPR_FVD_Prediction_models
+
 or google drive
 https://bit.ly/GPR_FVD_Prediction_models
 
